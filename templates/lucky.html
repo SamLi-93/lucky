@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>lucky's photo </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PHP Facebook Album Gallery">
+    <meta name="author" content="John Veldboom">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 70px;
+        }
+
+        .thumbnail img {
+            overflow: hidden;
+            height: 100px;
+            /*width: 100%;*/
+        }
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body style="background-color: #999;">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div id="navbar" class="collapse navbar-collapse">
+            <h1 style="color: #fff;text-align: center; margin: 20px;">lucky</h1>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container-fluid" style="margin-top: 40px;">
+    <ul class="thumbnails">
+        {% for i in range(1, 16) %}
+            <div class="col-lg-2 col-sm-3 col-xs-6">
+                <a href="{{ url_for('static', filename='images/' + i|string + '.jpg') }}" class="thumbnail" rel="tooltip">
+                    <img src="{{ url_for('static', filename='images/' + i|string + '.jpg') }}"/>
+                </a>
+            </div>
+
+        {% endfor %}
+
+
+    </ul>
+
+
+</div><!-- /.container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/js/jquery.prettyPhoto.min.js"
+        type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+
+</script>
+</body>
+</html>
