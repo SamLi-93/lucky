@@ -6,13 +6,13 @@ import pymysql
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
     return 'Hello World!'
 
 
-@app.route('/data')
-def data_show():
+@app.route('/lucky', methods=['GET', 'POST'])
+def lucky():
     # cursor = db.cursor()
     # sql = "SELECT distinct airline_name FROM flight where price > 2000"
     # cursor.execute(sql)
