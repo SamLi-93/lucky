@@ -16,6 +16,11 @@ def hello_world():
     return os.path.dirname(os.path.abspath(__file__)) + "/static/images/"
 
 
+@app.route('/test', methods=['GET', 'POST'])
+def test():
+    return 'test'
+
+
 @app.route('/lucky', methods=['GET', 'POST'])
 def lucky():
     cursor = db.cursor()
@@ -39,7 +44,7 @@ def upload_img():
             photos.save(img)
             cursor = db.cursor()
             sql = "INSERT INTO images(name, path) values (%s, %s)"
-            cursor.execute(sql, (img.filename, path+img.filename))
+            cursor.execute(sql, (img.filename, path + img.filename))
             db.commit()
         db.close()
         return "ttt"
