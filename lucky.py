@@ -6,7 +6,7 @@ import os
 
 db = pymysql.connect("127.0.0.1", "root", "root", "lucky", charset='utf8')
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 app.config['UPLOADED_PHOTO_DEST'] = os.path.dirname(os.path.abspath(__file__)) + "/static/images/"
 app.config['UPLOADED_PHOTO_ALLOW'] = IMAGES
 
