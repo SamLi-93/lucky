@@ -13,7 +13,7 @@ app.config['UPLOADED_PHOTO_ALLOW'] = IMAGES
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
-    return os.path.dirname(os.path.abspath(__file__)) + "/static/images/"
+    return 'tset'
 
 
 @app.route('/test', methods=['GET', 'POST'])
