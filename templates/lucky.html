@@ -38,8 +38,8 @@
     <ul class="thumbnails">
         {% for img in results %}
             <div class="col-lg-2 col-sm-3 col-xs-6">
-                <a href="{{ url_for('static', filename='images/' + img[0]) }}" class="thumbnail" rel="tooltip">
-                    <img src="{{ url_for('static', filename='images/' + img[0]) }}"/>
+                <a href="{{ url_for('/static', filename='images/' + img[0]) }}" class="thumbnail" rel="tooltip">
+                    <img src="{{ url_for('/static', filename='images/' + img[0]) }}"/>
                 </a>
             </div>
 
