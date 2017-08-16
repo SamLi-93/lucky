@@ -26,9 +26,8 @@ def lucky():
     cursor = db.cursor()
     sql = "SELECT name FROM images"
     cursor.execute(sql)
-    # results = cursor.fetchall()
-    test = 'test'
-    return render_template('lucky.html', test=test)
+    results = cursor.fetchall()
+    return render_template('lucky.html', results=results)
 
 
 photos = UploadSet('PHOTO')
