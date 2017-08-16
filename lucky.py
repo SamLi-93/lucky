@@ -45,7 +45,6 @@ def upload_img():
             sql = "INSERT INTO images(name, path) values (%s, %s)"
             cursor.execute(sql, (img.filename, path + img.filename))
             db.commit()
-        db.close()
         return "ttt"
         # return redirect(url_for('lucky', name=filename))
     return render_template('upload_img.html')
