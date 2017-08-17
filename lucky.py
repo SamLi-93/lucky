@@ -30,6 +30,14 @@ def lucky():
     return render_template('lucky.html', results=results)
 
 
+@app.route('/video', methods=['GET', 'POST'])
+def lucky_video():
+    cursor = db.cursor()
+    sql = "SELECT name FROM videos"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    return render_template('videos.html', results=results)
+
 photos = UploadSet('PHOTO')
 configure_uploads(app, photos)
 

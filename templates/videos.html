@@ -66,10 +66,10 @@
 <div class="container-fluid" style="margin-top: 40px;">
     <div class="waterfall">
         <ul class="thumbnails">
-            {% for img in results %}
+            {% for video in results %}
                 <div class="item">
-                    <a href="{{ url_for('static', filename='images/' + img[0]) }}" class="thumbnail" rel="tooltip">
-                        <img src="{{ url_for('static', filename='images/' + img[0]) }}"/>
+                    <a href="{{ url_for('static', filename='videos/' + video[0]) }}" class="thumbnail" rel="tooltip">
+                        <video height="100%" width="90%" src="{{ url_for('static', filename='videos/' + video[0]) }}"></video>
                     </a>
                 </div>
 
